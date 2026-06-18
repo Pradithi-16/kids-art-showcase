@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Competition Registration</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#f5f7fb;
+font-family:Arial,sans-serif;
+}
+
+.form-box{
+max-width:700px;
+margin:50px auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="form-box">
+
+<h2 class="mb-4">
+🏆 Competition Registration
+</h2>
+
+<form>
+
+<div class="mb-3">
+<label>Child Name</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Age</label>
+<input type="number" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Parent Name</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Competition</label>
+<select class="form-select">
+
+<option>
+Summer Art Competition
+</option>
+
+<option>
+Nature Drawing Challenge
+</option>
+
+</select>
+</div>
+
+<div class="mb-3">
+<label>Artwork Upload</label>
+<input
+type="file"
+class="form-control"
+accept="image/*">
+</div>
+
+<button
+type="button"
+class="btn btn-success"
+onclick="submitForm()">
+
+Submit Registration
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+function submitForm(){
+
+alert(
+"Registration Submitted Successfully!"
+);
+
+window.location.href =
+"competitions.html";
+
+}
+
+</script>
+
+</body>
+</html>

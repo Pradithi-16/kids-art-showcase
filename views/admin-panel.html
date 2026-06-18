@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+
+<style>
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#6c63ff;
+position:fixed;
+padding:20px;
+color:white;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,.2);
+}
+
+.main{
+margin-left:270px;
+padding:30px;
+}
+
+.admin-card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h3>🎨 Admin Panel</h3>
+
+<a href="#">Dashboard</a>
+<a href="#">Approve Artwork</a>
+<a href="#">Competitions</a>
+<a href="#">Events</a>
+<a href="#">Certificates</a>
+<a href="#">Logout</a>
+
+</div>
+
+<div class="main">
+
+<h2>Teacher / Admin Dashboard</h2>
+
+<div class="row mt-4">
+
+<div class="col-md-4">
+<div class="admin-card">
+<h3>156</h3>
+<p>Total Artworks</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="admin-card">
+<h3>48</h3>
+<p>Pending Approvals</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="admin-card">
+<h3>320</h3>
+<p>Registered Children</p>
+</div>
+</div>
+
+</div>
+
+<h3 class="mt-5">Pending Artwork Approval</h3>
+
+<div class="admin-card">
+
+<h5>Rainbow Dreams</h5>
+
+<p>Submitted by Emma Johnson</p>
+
+<p>#SummerArt2026</p>
+
+<button class="btn btn-success">
+Approve
+</button>
+
+<button class="btn btn-danger">
+Reject
+</button>
+
+</div>
+
+<div class="admin-card">
+
+<h5>Ocean Adventure</h5>
+
+<p>Submitted by Aarav Sharma</p>
+
+<p>#CreativeKids</p>
+
+<button class="btn btn-success">
+Approve
+</button>
+
+<button class="btn btn-danger">
+Reject
+</button>
+
+</div>
+
+<h3 class="mt-5">
+🏆 Competition Management
+</h3>
+
+<div class="admin-card">
+
+<input
+type="text"
+class="form-control mb-3"
+placeholder="Competition Name">
+
+<input
+type="date"
+class="form-control mb-3">
+
+<input
+type="text"
+class="form-control mb-3"
+placeholder="Competition Hashtag">
+
+<button class="btn btn-primary">
+Create Competition
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
