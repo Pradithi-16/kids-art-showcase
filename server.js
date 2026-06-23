@@ -16,7 +16,9 @@ app.use(express.json());
 app.use("/uploads", express.static("public/uploads"));
 app.use(express.static(path.join(__dirname, "public")));
 
-mongoose.connect("mongodb://127.0.0.1:27017/artshowcase")
+mongoose.connect(
+  "mongodb+srv://artshowcase:mintu16@cluster0.byrthzz.mongodb.net/artshowcase?retryWrites=true&w=majority"
+)
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 
