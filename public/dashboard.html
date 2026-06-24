@@ -134,14 +134,14 @@ object-fit:cover;
 <button
 class="btn btn-success mt-3"
 onclick="createPost()">
+Post Artwork
+</button>
+
 <a
 href="gallery.html"
-class="btn btn-warning">
-
+class="btn btn-warning mt-3 ms-2">
 🎨 View Gallery
-
 </a>
-Post Artwork
 
 </button>
 
@@ -211,7 +211,34 @@ Loves painting animals and landscapes.
 </div>
 
 </div>
-<script src="../public/js/app.js"></script>
+<script>
+function previewPost(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById("preview");
+
+    if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    }
+}
+
+function createPost() {
+    const caption =
+        document.getElementById("postCaption").value;
+
+    const image =
+        document.getElementById("postImage").files[0];
+
+    if (!image) {
+        alert("Please select an artwork image.");
+        return;
+    }
+
+    alert("Artwork selected successfully. Upload API can be connected here.");
+}
+</script>
+
+<script src="/js/app.js"></script>
 
 </body>
 </html>
