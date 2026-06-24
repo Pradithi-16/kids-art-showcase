@@ -1,29 +1,68 @@
 const jwt = require("jsonwebtoken");
 
-module.exports = (req, res, next) => {
 
-  const token =
-    req.headers.authorization;
+module.exports = (req,res,next)=>{
 
-  if (!token)
-    return res.status(401).json({
-      message: "Unauthorized"
-    });
 
-  try {
+    const authHeader =
+        req.headers.authorization;
 
-    const decoded =
-      jwt.verify(token, "secretKey");
 
-    req.user = decoded;
 
-    next();
+    if(!authHeader){
 
-  } catch {
 
-    res.status(401).json({
-      message: "Invalid Token"
-    });
+        return res.status(401).json({
 
-  }
+            message:"Unauthorized"
+
+        });
+
+
+    }
+
+
+
+
+
+    try {
+
+
+        const token =
+            authHeader.split(" ")[1];
+
+
+
+        const decoded =
+            jwt.verify(
+
+                token,
+
+                process.env.JWT_SECRET
+
+            );
+
+
+
+        req.user = decoded;
+
+
+
+        next();
+
+
+
+    } catch(error){
+
+
+        return res.status(401).json({
+
+            message:"Invalid Token"
+
+        });
+
+
+    }
+
+
 };

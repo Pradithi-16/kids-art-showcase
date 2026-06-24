@@ -1,23 +1,69 @@
 const express = require("express");
-const Competition =
-  require("../models/Competition");
+const Competition = require("../models/Competition");
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
 
-  const competitions =
-    await Competition.find();
+// GET ALL COMPETITIONS
 
-  res.json(competitions);
+router.get("/", async(req,res)=>{
+
+    try{
+
+        const competitions =
+            await Competition.find();
+
+        res.status(200).json(competitions);
+
+
+    }catch(error){
+
+        res.status(500).json({
+            message:error.message
+        });
+
+    }
+
 });
 
-router.post("/", async (req, res) => {
 
-  const competition =
-    await Competition.create(req.body);
 
-  res.json(competition);
+
+// CREATE COMPETITION
+
+router.post("/", async(req,res)=>{
+
+    try{
+
+
+        const competition =
+            await Competition.create(req.body);
+
+
+        res.status(201).json({
+
+            message:"Competition created successfully",
+
+            competition
+
+        });
+
+
+
+    }catch(error){
+
+
+        res.status(500).json({
+
+            message:error.message
+
+        });
+
+
+    }
+
 });
+
+
 
 module.exports = router;
